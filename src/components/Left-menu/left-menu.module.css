@@ -1,0 +1,16 @@
+.menu {
+    width: 20%;
+    background-color: chocolate;
+
+  }
+  /* .listMenu {
+      
+  } */
+  .listMenu li{
+    list-style-type: none;
+    margin: 5px;
+    background-color: teal;
+  }
+.item {
+    color: red;
+}

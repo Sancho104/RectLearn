@@ -1,9 +1,9 @@
 
 import './App.css';
 import React from "react";
-import Header from './header';
-import Menu from './left-menu';
-import Content from './content';
+import Header from './components/Header/header';
+import Menu from './components/Left-menu/left-menu';
+import Content from './components/Content/content';
 
 
 

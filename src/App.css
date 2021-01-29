@@ -1,27 +1,3 @@
-.wrap-links a{
-  margin: 10px;
-}
-.wrap-links {
-  background-color: wheat;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-}
-.menu {
-  width: 20%;
-}
-.list-menu {
-  background-color: chocolate;
-}
-.list-menu li{
-  list-style-type: none;
-  margin: 5px;
-  background-color: teal;
-}
-.content {
-  background-color: fuchsia;
-  width: 80%;
-}
 
 .content-wrap {
   width: 100%;

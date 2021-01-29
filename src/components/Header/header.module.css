@@ -1,0 +1,18 @@
+.wrap-links a{
+    margin: 10px;
+  }
+  .wrap-links {
+ 
+    display: flex;
+    justify-content: center;
+  }
+.header {
+    background-color: wheat;
+    height: 100px;
+}
+.item {
+    color: cyan;
+}
+.active {
+    color:blue;
+}
