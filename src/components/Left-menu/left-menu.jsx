@@ -5,11 +5,11 @@ const Menu = () => {
     return (
         <div className={classes.menu}>
             <ul className={classes.listMenu}>
-                <li className={classes.item}>Item</li>
-                <li className={classes.item}>User</li>
-                <li className={classes.item}>Search</li>
-                <li>Anything</li>
-                <li>Login</li>
+                <li className={classes.item}><a href="/news">News</a> </li>
+                <li className={classes.item}><a href="user">User</a></li>
+                <li className={classes.item}><a href="/search">Search</a></li>
+                <li className={classes.item}><a href="/dialogs">dialogs</a></li>
+                <li className={classes.item}><a href="/login">Login</a></li>
             </ul>
         </div>
     );

@@ -5,8 +5,8 @@ import Post from './Post/post';
 const Posts = () => {
     return (
         <div className={classes.wrapPosts}>
-            <Post />
-            <Post />
+            <Post message="It's amazing"/>
+            <Post message="It's anbiliveble"/>
         </div>
     );
 }

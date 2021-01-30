@@ -1,0 +1,7 @@
+.imgWrap img {
+    width: 200px;
+}
+.new1Wrap {
+    display: flex;
+    align-items: center;
+}
