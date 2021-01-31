@@ -9,8 +9,12 @@
   .listMenu li{
     list-style-type: none;
     margin: 5px;
-    background-color: teal;
+  
   }
-.item {
+  .listMenu a {
+    color: white;
+    text-decoration: none;
+  }
+.item a.activeLink {
     color: red;
 }
