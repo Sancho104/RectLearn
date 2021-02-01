@@ -23,8 +23,7 @@ const Dialogs = (props) => {
             <div className={classes.wrapMessage}>
                 {messages}
             </div>
-
-
+            
         </div>
     );
 }

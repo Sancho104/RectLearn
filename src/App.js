@@ -29,11 +29,12 @@ const App = (props) => {
           <Menu />
 
           <div className='content-delta'>
-            <Route path='/posts' render={() => <Posts postsData={props.postsData}/>} />
-            <Route path='/news'  render={() => <News newsData={props.newsData}/> } />
+            <Route path='/posts' render={() => <Posts postsData={props.state.postsData}/>} />
+            <Route path='/news'  render={() => <News newsData={props.state.newsData}/> } />
             <Route path='/user' component={User} />
             <Route path='/search' component={Search} />
-            <Route path='/dialogs' render={ () => <Dialogs dialogsData={props.dataDialogs} messageData={props.dataMessage}/> }/>
+            <Route path='/dialogs' 
+            render={ () => <Dialogs dialogsData={props.state.dialogsPage.dialogsData} messageData={props.state.dialogsPage.messageData}/> }/>
             <Route path='/login' component={Login} />
 
           </div>
