@@ -13,23 +13,14 @@ import Login from './components/Content/ContentIn/Login/Login';
 import Posts from "./components/Content/ContentIn/Posts/Posts";
 
 
-// function formatName(user) {
-//   return user.fN + ' ' + user.lN;
+// const SomeComponent = () => {
+//   return <Dialogs />
 // }
 
-// const user = {
-//   fN: 'Vasia',
-//   lN: 'Pupkin',
-// };
+const App = (props) => {
+  // console.log(props.dataDialogs);
+  // console.log(props.dataMessage);
 
-// const name = 'idiot';
-
-// const button = document.getElementById('id1');
-// button.addEventListener('click', function(){
-//   <Content className='hidden' />
-// })
-
-const App = () => {
   return (
     <BrowserRouter>
       <div className='wrapper'>
@@ -38,11 +29,11 @@ const App = () => {
           <Menu />
 
           <div className='content-delta'>
-            <Route path='/posts' component={Posts} />
-            <Route path='/news' component={News} />
+            <Route path='/posts' render={() => <Posts postsData={props.postsData}/>} />
+            <Route path='/news'  render={() => <News newsData={props.newsData}/> } />
             <Route path='/user' component={User} />
             <Route path='/search' component={Search} />
-            <Route path='/dialogs' component={Dialogs} />
+            <Route path='/dialogs' render={ () => <Dialogs dialogsData={props.dataDialogs} messageData={props.dataMessage}/> }/>
             <Route path='/login' component={Login} />
 
           </div>
