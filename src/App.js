@@ -11,6 +11,7 @@ import News from './components/Content/ContentIn/News/News';
 import Search from './components/Content/ContentIn/Search/Search';
 import Login from './components/Content/ContentIn/Login/Login';
 import Posts from "./components/Content/ContentIn/Posts/Posts";
+import FriendsMenu from './components/Left-menu/FriendsMenu/FriendsMenu';
 
 
 // const SomeComponent = () => {
@@ -26,7 +27,8 @@ const App = (props) => {
       <div className='wrapper'>
         <Header />
         <div className='content-wrap'>
-          <Menu />
+          <Menu dialogsData={props.state.dialogsPage.dialogsData} />
+          
 
           <div className='content-delta'>
             <Route path='/posts' render={() => <Posts postsData={props.state.postsData}/>} />
@@ -34,9 +36,11 @@ const App = (props) => {
             <Route path='/user' component={User} />
             <Route path='/search' component={Search} />
             <Route path='/dialogs' 
-            render={ () => <Dialogs dialogsData={props.state.dialogsPage.dialogsData} messageData={props.state.dialogsPage.messageData}/> }/>
+            render={ () => <Dialogs dialogsPage={props.state.dialogsPage} /> }/>
             <Route path='/login' component={Login} />
-
+            {/* <Route path='/friends' render={() => <FriendsMenu />} /> */}
+            {/* <Route path='/friends' render={() => <FriendsMenu dialogsData={props.state.dialogsPage.dialogsData}/>} /> */}
+            
           </div>
 
         </div>

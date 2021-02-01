@@ -5,7 +5,16 @@ import classes from './DialogsItem.module.css'
 const DialogItem = (props) => {
     return (
         <div className={classes.dialog + ' ' + classes.active}>
-            <NavLink to={'/dialogs/' + props.id}> {props.name}</NavLink>
+            <NavLink className={classes.dialogItem} to={'/dialogs/' + props.id}>
+                <div className={classes.photoWrap}>
+                    <img src={props.photo} alt="" />
+                </div>
+                <div className={classes.nameText}>
+                    {props.name}
+                </div>
+
+
+            </NavLink>
         </div>
     );
 }
