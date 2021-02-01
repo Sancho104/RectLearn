@@ -1,0 +1,14 @@
+.wrap {
+    display: flex;
+}
+.wrapMessage {
+    margin-left: 200px;
+    width: 80%;
+}
+.dialog,
+.message {
+    margin: 20px;
+}
+.dialog.active {
+    color: gold;
+}

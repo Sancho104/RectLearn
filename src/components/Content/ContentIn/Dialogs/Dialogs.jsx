@@ -1,22 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import classes from './Dialogs.module.css'
+import classes from './Dialogs.module.css';
+import Message from './Messages/Message';
+import DialogItem from './DialogsItem/DialogsItem'; 
 
-const DialogItem = (props) => {
-    return (
-        <div className={classes.dialog + ' ' + classes.active}>
-            <NavLink to={'/dialogs/' + props.id}> {props.name}</NavLink>
-        </div>
-    );
-}
 
-const Massage = (props) => {
-    return (
-        <div className={classes.message}>
-            {props.message}
-        </div>
-    );
-}
 
 const Dialogs = (props) => {
     let dialogsData = [
@@ -32,22 +20,20 @@ const Dialogs = (props) => {
         { id: 4, message: 'Shut up, bitch!' }
     ];
 
-    let dialogs = dialogsData.map(el => <DialogItem name={el.name} id={el.id} />);
-    let messages = messageData.map(el => <Massage message={el.message} />)
+    let dialogs = dialogsData.map( el => <DialogItem name={el.name} id={el.id} />);
+    let messages = messageData.map( el => <Message message={el.message}/>)
 
     return (
         <div className={classes.wrap}>
 
             <div className={classes.wrapDialogs}>
-
-                {dialogs}
+                
+                { dialogs }
 
             </div>
 
             <div className={classes.wrapMessage}>
-
-                {messages}
-
+                { messages }
             </div>
 
 
