@@ -11,7 +11,6 @@ import News from './components/Content/ContentIn/News/News';
 import Search from './components/Content/ContentIn/Search/Search';
 import Login from './components/Content/ContentIn/Login/Login';
 import Posts from "./components/Content/ContentIn/Posts/Posts";
-import FriendsMenu from './components/Left-menu/FriendsMenu/FriendsMenu';
 
 
 // const SomeComponent = () => {
@@ -21,25 +20,29 @@ import FriendsMenu from './components/Left-menu/FriendsMenu/FriendsMenu';
 const App = (props) => {
   // console.log(props.dataDialogs);
   // console.log(props.dataMessage);
-
+  // debugger;
   return (
     <BrowserRouter>
       <div className='wrapper'>
         <Header />
         <div className='content-wrap'>
+          
           <Menu dialogsData={props.state.dialogsPage.dialogsData} />
           
 
           <div className='content-delta'>
-            <Route path='/posts' render={() => <Posts postsData={props.state.postsData}/>} />
+            <Route path='/posts' render={() => <Posts 
+            postsPage={props.state.postsPage}
+            addPost={props.addPost}
+            newPostText={props.state.postsPage.newPostText}
+            updateNewPostText={props.updateNewPostText}
+            />} />
             <Route path='/news'  render={() => <News newsData={props.state.newsData}/> } />
             <Route path='/user' component={User} />
             <Route path='/search' component={Search} />
             <Route path='/dialogs' 
-            render={ () => <Dialogs dialogsPage={props.state.dialogsPage} /> }/>
+            render={ () => <Dialogs dialogsPage={props.state.postsData} /> }/>
             <Route path='/login' component={Login} />
-            {/* <Route path='/friends' render={() => <FriendsMenu />} /> */}
-            {/* <Route path='/friends' render={() => <FriendsMenu dialogsData={props.state.dialogsPage.dialogsData}/>} /> */}
             
           </div>
 

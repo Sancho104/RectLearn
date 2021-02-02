@@ -1,3 +1,6 @@
+import { rerenderTree } from "../render";
+
+
 let state = {
     dialogsPage : {
         dialogsData : [
@@ -13,11 +16,15 @@ let state = {
             { id: 4, message: 'Shut up, bitch!' }
         ],
     },
-    postsData : [
-        { id: 1, message: 'Crap!!!!!!!', likesCount: 10, src: 'https://s7g3.scene7.com/is/image/soloinvest/n11346A?$big_image_web$' },
-        { id: 2, message: 'Shit!!!!!!!', likesCount: 5, src: 'https://s7g3.scene7.com/is/image/soloinvest/n11346A?$big_image_web$' },
-        { id: 3, message: 'Lol!!!!!!!', likesCount: 50, src: 'https://s7g3.scene7.com/is/image/soloinvest/n11346A?$big_image_web$' },
-    ],
+    postsPage: {
+        postsData : [
+            { id: 1, message: 'Crap!!!!!!!', likesCount: 10, src: 'https://s7g3.scene7.com/is/image/soloinvest/n11346A?$big_image_web$' },
+            { id: 2, message: 'Shit!!!!!!!', likesCount: 5, src: 'https://s7g3.scene7.com/is/image/soloinvest/n11346A?$big_image_web$' },
+            { id: 3, message: 'Lol!!!!!!!', likesCount: 50, src: 'https://s7g3.scene7.com/is/image/soloinvest/n11346A?$big_image_web$' },
+        ],
+        newPostText: 'anything crap',
+    },
+
     newsData : [
         { id: 1, src: 'https://miro.medium.com/max/13440/1*NtrIiZxvi2d0Yoh_389Z_A.jpeg', text: 'It`s a bich' },
         { id: 2, src: 'https://miro.medium.com/max/13440/1*NtrIiZxvi2d0Yoh_389Z_A.jpeg', text: 'It`s a not bich' },
@@ -27,4 +34,25 @@ let state = {
     ],
 }
 
+export let addPost = () => {
+    // debugger;
+    let newPost = {
+        id: 4,
+        message: state.postsPage.newPostText,
+        likesCount: 0,
+        src: 'https://s7g3.scene7.com/is/image/soloinvest/n11346A?$big_image_web$',
+    };
+    state.postsPage.postsData.push(newPost);
+    state.postsPage.newPostText= '';
+    rerenderTree(state);
+    
+}
+
+export let updateNewPostText = (newText) => {
+    // debugger;
+    state.postsPage.newPostText = newText;
+    rerenderTree(state);    
+}
+
+window.state = state;
 export default state;

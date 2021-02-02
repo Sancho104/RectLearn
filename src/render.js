@@ -3,22 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import state from "./Redux/State";
+// import state from "./Redux/State";
 import {addPost} from './Redux/State';
-import { rerenderTree } from './render';
+import { updateNewPostText } from "./Redux/State";
 
 
 // addPost('dfdfdfdfdf');
 
 
-// let rerenderTree = () => {
-//   ReactDOM.render(
-//     <App state={state} addPost={addPost}/>,
-//     document.getElementById('root')
-//   );
-// }
-rerenderTree(state);
+export let rerenderTree = (state) => {
+  ReactDOM.render(
+    <App state={state} addPost={addPost} updateNewPostText={updateNewPostText}/>,
+    document.getElementById('root')
+  );
+}
 
+// rerenderTree();
 
 
 

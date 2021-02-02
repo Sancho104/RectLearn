@@ -7,8 +7,8 @@ import classes from './FriendsMenu.module.css';
 
 const FriendsMenu = (props) => {
 
-    let user = props.dialogsData.map(el => {
-        if (el.id >= 4) return;
+    let user = props.dialogsData.map((el, i) => {
+        if (i >= 2) return;
         return (
             <Friend id={el.id} name={el.name} />
         );
