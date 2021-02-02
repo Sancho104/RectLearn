@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classes from './Dialogs.module.css';
-import Message from './Messages/Message/Message';
-import DialogItem from './DialogsItem/DialogsItem';
-import Messages from './Messages/Messages';
+// import Message from './Messages/Message/Message';
+import DialogItem from './DialogsItem/DialogItem';
+import Messages from './Messages/Messages'
 
 
 

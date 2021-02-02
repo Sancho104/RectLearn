@@ -54,5 +54,5 @@ export let updateNewPostText = (newText) => {
     rerenderTree(state);    
 }
 
-window.state = state;
+
 export default state;

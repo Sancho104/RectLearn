@@ -26,24 +26,26 @@ const App = (props) => {
       <div className='wrapper'>
         <Header />
         <div className='content-wrap'>
-          
+
           <Menu dialogsData={props.state.dialogsPage.dialogsData} />
-          
+
 
           <div className='content-delta'>
-            <Route path='/posts' render={() => <Posts 
-            postsPage={props.state.postsPage}
-            addPost={props.addPost}
-            newPostText={props.state.postsPage.newPostText}
-            updateNewPostText={props.updateNewPostText}
-            />} />
-            <Route path='/news'  render={() => <News newsData={props.state.newsData}/> } />
+            <Route path='/posts' render={() => (
+              <Posts
+                postsPage={props.state.postsPage}
+                addPost={props.addPost}
+                newPostText={props.state.postsPage.newPostText}
+                updateNewPostText={props.updateNewPostText}
+              />
+            )} />
+            <Route path='/news' render={() => <News newsData={props.state.newsData} />} />
             <Route path='/user' component={User} />
             <Route path='/search' component={Search} />
-            <Route path='/dialogs' 
-            render={ () => <Dialogs dialogsPage={props.state.postsData} /> }/>
+            <Route path='/dialogs'
+              render={() => <Dialogs dialogsPage={props.state.dialogsPage} />} />
             <Route path='/login' component={Login} />
-            
+
           </div>
 
         </div>
